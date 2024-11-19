@@ -37,10 +37,15 @@ const posts = [
         tags: ["ricetta", "torta", "paesana"],
       },
     ];
-
+\
 app.get('/', (req, res) => {
   res.send('Server del mio blog')
 })
+
+app.get("/bacheca", (req, res) => {
+    res.json({ postList, listLength: postList.length });
+  });
+  
 
 app.listen(port, () => {
   console.log(`server listening on port ${port}`)
